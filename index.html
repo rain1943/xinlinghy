@@ -3,64 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>心灵花园</title>
+    <title>心灵花园 - 抑郁厌学青少年社会工作服务项目</title>
     <style>
         /* 全局样式重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft YaHei", 微软雅黑, sans-serif;
+            font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
         }
 
-        /* 首图容器样式 */
-        .header-img {
-            width: 100%;
-            height: 400px; /* 首图高度，可根据需求调整 */
-            overflow: hidden;
+        /* 页面背景与基础样式 */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
         }
 
-        .header-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* 保持图片比例，覆盖容器 */
-        }
-
-        /* 导航栏样式 */
-        .nav-bar {
-            background-color: #4a90e2; /* 主色调：柔和的蓝色，贴合心灵治愈主题 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 20px;
+        /* 顶部导航栏 */
+        .header {
+            background-color: #5a9e8b; /* 治愈系绿色 */
+            padding: 15px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .nav-item {
+        .nav-container {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
             color: white;
             text-decoration: none;
-            padding: 15px 25px;
             font-size: 16px;
-            transition: background-color 0.3s ease;
+            transition: color 0.3s;
         }
 
-        .nav-item:hover {
-            background-color: #357abd; /* 鼠标悬浮时的深色效果 */
-            border-radius: 4px;
+        .nav-menu a:hover {
+            color: #f0f8f5;
         }
 
-        /* 响应式适配：手机端导航栏垂直排列 */
+        /* 横幅区域 */
+        .banner {
+            background: linear-gradient(rgba(90, 158, 139, 0.8), rgba(90, 158, 139, 0.8)), 
+                        url("https://picsum.photos/1920/600?nature=green") center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .banner h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 项目简介区域 */
+        .intro {
+            width: 90%;
+            max-width: 1200px;
+            margin: 60px auto;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 32px;
+            color: #5a9e8b;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .intro h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #5a9e8b;
+            margin: 10px auto;
+        }
+
+        .intro-content {
+            font-size: 16px;
+            color: #555;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        /* 核心服务模块 */
+        .services {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #5a9e8b;
+            font-size: 22px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-card h3::before {
+            content: "🌱";
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* 底部信息 */
+        .footer {
+            background-color: #5a9e8b;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        /* 响应式适配 */
         @media (max-width: 768px) {
-            .nav-bar {
+            .nav-container {
                 flex-direction: column;
             }
-            .nav-item {
-                width: 100%;
-                text-align: center;
-                padding: 12px 0;
+
+            .nav-menu {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-            .header-img {
-                height: 250px; /* 手机端首图高度适配 */
+
+            .nav-menu li {
+                margin: 5px 15px;
+            }
+
+            .banner h1 {
+                font-size: 32px;
+            }
+
+            .banner p {
+                font-size: 16px;
+            }
+
+            .intro h2 {
+                font-size: 26px;
             }
         }
     </style>
@@ -76,7 +212,8 @@
     <nav class="nav-bar">
         <a href="https://rain1943.github.io/xinlinghy/" class="nav-item">首页</a>
         <a href="https://rain1943.github.io/xlhyService-Sector/" class="nav-item">服务板块</a>
-        <a href="https://rain1943.github.io/xlhyNews/" class="nav-item">我们的故事</a>        
+        <a href="https://rain1943.github.io/xlhyNews/" class="nav-item">我们的故事</a> 
+		<a href="https://rain1943.github.io/xlhyNews/" class="nav-item">心理小站</a>
 		<a href="https://rain1943.github.io/about-us/" class="nav-item">联系我们</a>
     </nav>
 
@@ -92,6 +229,7 @@
 	
 </body>
 </html>
+
 
 
 
