@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>联系我们</title>
+	</head>
+	<body>
+		<div class="inline-box">
+		  <img src="images/微信图片_20260309154141_1_7-removebg-preview.png" width="125"><h1><div class="color">心灵花园</div></h1>
+		  <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+		  <div class="dele"><h2><a href="首页.html">首页 </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="项目简介.html">项目简介</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="服务板块.html">服务板块</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="我们的故事.html">我们的故事</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="心理小站.html">心理小站</a>&nbsp;&nbsp;&nbsp;<a href="联系我们.html".html">联系我们</a></h2></div>
+		</div>
+		<div class="center"><img src="images/1.png" width="820px" height="300px"></div>
+		</div>
+			<p><div class="intro-title"><center>招募对象</div></p>
+			<p><center>1.未满18周岁；</p>
+				<p><center>2.处于稳定状态（经医生评估过服药中且情绪稳定或长期请假/休学状态的抑郁、厌学青少年）；</p>
+			<p><center>3.本人及家属愿配合、有参与改变的意愿（这一点很关键！）</p>
+			<p></p>
+			<p><div class="intro-title"><center>报名方式</p>
+				<p><center>1.扫描下方二维码，参与报名</p>
+		    <p><center>2.本项目接受医院、区镇、学校、社会组织等机构转介</p>
+				<p><center>3.联系人：张社工 18720011459（微信同号）</p>
+		<p><center>4.服务点:</p>
+				<p><center>①城北家庭服务中心（花园路1389号）</p>
+		<p><center>②周市镇小泾村美丽菜园（华杨北路888号）</p>
+				<img src="images/19.png">
+		    <P><h6>作者的GitHub账号<a href="https://github.com/rain1943">查看链接</a>,觉得网页不错的关注一下Ciallo～ (∠・ω< )⌒★</h6></P>
+	</body>
+	<style>
+		.center{
+			text-align :center;
+		}
+		.color{
+		color: #8fe800;
+		}
+		.inline-box {
+			  position: fixed;    /* 固定定位 */
+			  top: 0;             /* 贴在页面最上方 */
+			  left: 0;            /* 贴在左边 */
+			  right: 0;           /* 贴在右边（铺满宽度） */
+			  z-index: 999;   
+		  /* 让图片和文字在一行 */
+		  display: flex;
+		  /* 垂直居中对齐 */
+		  align-items: center;
+		  /* 图片和文字之间的距离（自己改数字） */
+		  gap: 20px;
+		  /* 控制整个内容的位置 */
+		  margin: 0;
+		  white-space: nowrap;
+		}
+		
+		.inline-box h2 {
+		  margin: 0; /* 去掉标题默认的边距 */
+		}
+		
+		.inline-box img {
+		  vertical-align: middle;
+		}
+		/* 全局去掉所有链接下划线 */
+		.dele
+		a,
+		a:hover,
+		a:visited,
+		a:active {
+		  text-decoration: none;
+		  color: #05d7c6; /* 你可以自己改颜色 */
+		}
+		body {
+		  margin-top: 100px;
+		}
+		.slider {
+		  position: relative;
+		  width: 800px;    /* 宽度自己改 */
+		  height: 450px;   /* 高度自己改 */
+		  margin: 50px auto;
+		  overflow: hidden;
+		}
+		
+		/* 图片 */
+		.slide {
+		  width: 100%;
+		  height: 100%;
+		  object-fit: cover;
+		  display: none; /* 默认隐藏 */
+		}
+		
+		/* 显示当前图片 */
+		.slide.active {
+		  display: block;
+		}
+		
+		/* 左右按钮 */
+		.prev, .next {
+		  position: absolute;
+		  top: 50%;
+		  transform: translateY(-50%);
+		  font-size: 30px;
+		  color: white;
+		  background: rgba(0,0,0,0.3);
+		  padding: 10px 20px;
+		  cursor: pointer;
+		  border: none;
+		  z-index: 99;
+		}
+		
+		.prev { left: 20px; }
+		.next { right: 20px; }
+	</style>
+	<script>
+	// 获取所有图片
+	let slides = document.querySelectorAll('.slide');
+	let index = 0;
+	
+	// 下一张
+	function nextSlide() {
+	  slides[index].classList.remove('active');
+	  index = (index + 1) % slides.length;
+	  slides[index].classList.add('active');
+	}
+	
+	// 上一张
+	function prevSlide() {
+	  slides[index].classList.remove('active');
+	  index = (index - 1 + slides.length) % slides.length;
+	  slides[index].classList.add('active');
+	}
+	
+	// 绑定按钮
+	document.querySelector('.next').onclick = nextSlide;
+	document.querySelector('.prev').onclick = prevSlide;
+	</script>
+</html>

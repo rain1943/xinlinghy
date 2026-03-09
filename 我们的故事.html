@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我们的故事</title>
+	</head>
+	<body>
+		<div class="inline-box">
+		  <img src="images/微信图片_20260309154141_1_7-removebg-preview.png" width="125"><h1><div class="color">心灵花园</div></h1>
+		  <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+		  <div class="dele"><h2><a href="首页.html">首页 </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="项目简介.html">项目简介</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="服务板块.html">服务板块</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="我们的故事.html">我们的故事</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="心理小站.html">心理小站</a>&nbsp;&nbsp;<a href="联系我们.html".html">联系我们</a></h2></div>
+		</div>
+		<div class="center"><img src="images/1.png" width="820px" height="300px"></div>
+		<p><h1><center>活动资讯</h1></p>
+			<div style="text-align: center;"><img src="images/1.jpg" width="300px" height="300px"></div>
+			<p><center>扫描二维码，关注公众号，搜索“心灵花园”获取更多资讯！
+		</p>
+	</body>
+	<style>
+		.content {
+		            width: 90%;
+		            max-width: 1200px;
+		            margin: 0 auto;
+		            font-size: 16px;
+		            line-height: 1.8;
+		        }
+		        /* 黄色标题标签 */
+		        .section-title {
+		            background: #ffeb3b;
+		            color: #000;
+		            font-size: 18px;
+		            font-weight: bold;
+		            padding: 5px 10px;
+		            display: inline-block;
+		            border: 1px solid #000;
+		            margin: 20px 0 10px;
+		        }
+		        /* 红色注意提示 */
+		        .notice {
+		            color: #ff0000;
+		            font-weight: bold;
+		            margin: 10px 0;
+		        }
+		        /* 公益热线样式 */
+		        .hotline {
+		            margin: 20px 0;
+		            text-align: center;
+		        }
+		        /* 响应式适配 */
+		        @media (max-width: 768px) {
+		            .content {
+		                font-size: 14px;
+		            }
+		            .section-title {
+		                font-size: 16px;
+		            }
+		        }
+		.center{
+			text-align :center;
+		}
+		.color{
+		color: #8fe800;
+		}
+		.inline-box {
+			  position: fixed;    /* 固定定位 */
+			  top: 0;             /* 贴在页面最上方 */
+			  left: 0;            /* 贴在左边 */
+			  right: 0;           /* 贴在右边（铺满宽度） */
+			  z-index: 999;   
+		  /* 让图片和文字在一行 */
+		  display: flex;
+		  /* 垂直居中对齐 */
+		  align-items: center;
+		  /* 图片和文字之间的距离（自己改数字） */
+		  gap: 20px;
+		  /* 控制整个内容的位置 */
+		  margin: 0;
+		  white-space: nowrap;
+		}
+		
+		.inline-box h2 {
+		  margin: 0; /* 去掉标题默认的边距 */
+		}
+		
+		.inline-box img {
+		  vertical-align: middle;
+		}
+		/* 全局去掉所有链接下划线 */
+		.dele
+		a,
+		a:hover,
+		a:visited,
+		a:active {
+		  text-decoration: none;
+		  color: #05d7c6; /* 你可以自己改颜色 */
+		}
+		body {
+		  margin-top: 100px;
+		}
+		.slider {
+		  position: relative;
+		  width: 800px;    /* 宽度自己改 */
+		  height: 450px;   /* 高度自己改 */
+		  margin: 50px auto;
+		  overflow: hidden;
+		}
+		
+		/* 图片 */
+		.slide {
+		  width: 100%;
+		  height: 100%;
+		  object-fit: cover;
+		  display: none; /* 默认隐藏 */
+		}
+		
+		/* 显示当前图片 */
+		.slide.active {
+		  display: block;
+		}
+		
+		/* 左右按钮 */
+		.prev, .next {
+		  position: absolute;
+		  top: 50%;
+		  transform: translateY(-50%);
+		  font-size: 30px;
+		  color: white;
+		  background: rgba(0,0,0,0.3);
+		  padding: 10px 20px;
+		  cursor: pointer;
+		  border: none;
+		  z-index: 99;
+		}
+		
+		.prev { left: 20px; }
+		.next { right: 20px; }
+	</style>
+	<script>
+	// 获取所有图片
+	let slides = document.querySelectorAll('.slide');
+	let index = 0;
+	
+	// 下一张
+	function nextSlide() {
+	  slides[index].classList.remove('active');
+	  index = (index + 1) % slides.length;
+	  slides[index].classList.add('active');
+	}
+	
+	// 上一张
+	function prevSlide() {
+	  slides[index].classList.remove('active');
+	  index = (index - 1 + slides.length) % slides.length;
+	  slides[index].classList.add('active');
+	}
+	
+	// 绑定按钮
+	document.querySelector('.next').onclick = nextSlide;
+	document.querySelector('.prev').onclick = prevSlide;
+	</script>
+</html>
