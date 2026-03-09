@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>心灵花园首页</title>
+    <style>
+        /* 导航栏固定 */
+        .inline-box {
+            position: fixed;    /* 固定定位 */
+            	  top: 0;             /* 贴在页面最上方 */
+            	  left: 0;            /* 贴在左边 */
+            	  right: 0;           /* 贴在右边（铺满宽度） */
+            	  z-index: 999;   
+              /* 让图片和文字在一行 */
+              display: flex;
+              /* 垂直居中对齐 */
+              align-items: center;
+              /* 图片和文字之间的距离（自己改数字） */
+              gap: 20px;
+              /* 控制整个内容的位置 */
+              margin: 0;
+              white-space: nowrap;
+            }
+
+        .inline-box h1,
+        .inline-box h2 {
+            margin: 0;
+        }
+
+        /* 链接去掉下划线 */
+        .dele a {
+            text-decoration: none;
+            color: #05d7c6;
+            margin: 0 10px;
+        }
+
+        /* 心灵花园颜色 */
+        .color {
+            color: #8fe800;
+        }
+
+        /* 居中 */
+        .center {
+            text-align: center;
+        }
+
+        /* 图片切换按钮 */
+        .tab-btn {
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: 1px solid #f8f8f8;
+            background: #f5f5f5;
+        }
+
+        .tab-btn.active {
+            background: #bdbfbc;
+            color: #fff;
+        }
+
+        /* 图片容器 */
+        .img-box {
+            margin-top: 20px;
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* 图片默认隐藏 */
+        .tab-img {
+            display: none;
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        /* 显示当前图片 */
+        .tab-img.show {
+            display: block;
+        }
+
+        /* 图片悬停放大 */
+        .tab-img:hover {
+            transform: scale(1.08);
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        body {
+            margin-top: 120px;
+        }
+		.black{
+		    border: 20px solid #383838;
+		    border-radius: 1px;
+		    padding: 0px;
+		    min-width: 0px;}
+			.h{
+				display: flex;
+				  align-items: center;
+				  gap: 1px;
+			}
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="inline-box">
+        <img src="images/微信图片_20260309154141_1_7-removebg-preview.png" width="125">
+        <h1><div class="color">心灵花园</div></h1>
+		<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+        <div class="dele">
+            <h2>
+                <a href="index.html">首页</a>
+                <a href="项目简介.html">项目简介</a>
+                <a href="服务板块.html">服务板块</a>
+                <a href="我们的故事.html">我们的故事</a>
+                <a href="心理小站.html">心理小站</a>
+                <a href="联系我们.html">联系我们</a>
+            </h2>
+        </div>
+    </div>
+
+    <!-- 主理人 -->
+    <div class="center">
+        <h2>*闪闪发光的主理人*</h2>
+        <img src="images/微信图片_20260309170836_13_9.jpg" width="40%" height="375px">
+        <img src="images/捕获.PNG" width="50%" height="375px">
+    </div>
+
+    <!-- 产品体验 图片切换 -->
+    <div class="center">
+        <h1>产品体验</h1>
+    </div>
+
+    <div class="center">
+        <button class="tab-btn active" onclick="showImg(0)">合照</button>
+        <button class="tab-btn" onclick="showImg(1)">情绪卡牌</button>
+        <button class="tab-btn" onclick="showImg(2)">拍立得照相</button>
+        <button class="tab-btn" onclick="showImg(3)">留言墙</button>
+    </div>
+
+    <div class="img-box center">
+        <img src="images/微信图片_20260309170831_11_9.jpg" class="tab-img show">
+        <img src="images/微信图片_20260309170838_14_9.jpg" class="tab-img">
+        <img src="images/微信图片_20260309170852_16_9.jpg" class="tab-img">
+        <img src="images/微信图片_20260309170840_15_9.jpg" class="tab-img">
+    </div>
+
+    <script>
+        let btns = document.querySelectorAll('.tab-btn');
+        let imgs = document.querySelectorAll('.tab-img');
+
+        function showImg(index) {
+            btns.forEach((btn, i) => {
+                btn.classList.remove('active');
+                imgs[i].classList.remove('show');
+            });
+            btns[index].classList.add('active');
+            imgs[index].classList.add('show');
+        }
+    </script>
+	<div class="black">
+	<div class="h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/微信图片_20260309154141_1_7-removebg-preview.png" width="125">
+	<div class="color"><h1>心灵花园&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1></div><h4>1.江苏省苏州市昆山市水秀路水秀公园<p>2.江苏省苏州市昆山市玉山镇花园路1389号城北家庭服务中心</p></h4></div>
+
+	</div>
+</body>
+</html>
